@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.PlayMusicController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="229.0" minHeight="0.0" prefHeight="48.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="467.0" minHeight="10.0" prefHeight="419.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <AnchorPane prefHeight="114.0" prefWidth="900.0" style="-fx-background-color: lightgray;">
+         <children>
+            <TextField alignment="CENTER" editable="false" layoutX="42.0" layoutY="27.0" prefHeight="73.0" prefWidth="821.0" text="Kien Custom Music Player">
+               <font>
+                  <Font name="DejaVu Serif Bold" size="38.0" />
+               </font>
+            </TextField>
+         </children></AnchorPane>
+      <GridPane GridPane.rowIndex="2">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="442.0" minWidth="10.0" prefWidth="172.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="728.0" minWidth="10.0" prefWidth="728.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <HBox alignment="CENTER" layoutX="-14.0" layoutY="4.0" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Button fx:id="backwardButton" alignment="CENTER_RIGHT" layoutX="38.0" layoutY="38.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" text="&lt;&lt;">
+                                 <font>
+                                    <Font size="9.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Button fx:id="playButton" alignment="CENTER" layoutX="8.0" layoutY="23.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="52.0" text="Play" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Button fx:id="forwardButton" layoutY="38.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" text="&gt;&gt;">
+                                 <font>
+                                    <Font size="9.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+               <children>
+                  <Slider fx:id="timeBar" layoutX="15.0" layoutY="47.0" prefHeight="24.0" prefWidth="548.0" showTickMarks="true" value="20.0" />
+                  <Slider fx:id="volumeSlider" layoutX="685.0" layoutY="7.0" orientation="VERTICAL" prefHeight="57.0" prefWidth="14.0" />
+                  <ImageView fx:id="volumeImage" fitHeight="25.0" fitWidth="28.0" layoutX="678.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </AnchorPane>
+         </children>
+      </GridPane>
+      <GridPane GridPane.rowIndex="1">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.0" minWidth="0.0" prefWidth="42.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="711.0" minWidth="10.0" prefWidth="586.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="360.0" minWidth="10.0" prefWidth="265.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <AnchorPane prefHeight="467.0" prefWidth="535.0" style="-fx-background-color: gray;" GridPane.columnIndex="1">
+               <children>
+                  <ImageView fx:id="imageView" fitHeight="383.0" fitWidth="430.0" layoutX="79.0" layoutY="42.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </AnchorPane>
+            <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2">
+               <children>
+                  <AnchorPane prefHeight="78.0" prefWidth="267.0">
+                     <children>
+                        <MenuButton fx:id="chooseFileButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Music File" wrapText="true">
+                          <items>
+                            <MenuItem mnemonicParsing="false" text="Choose File..." />
+                          </items>
+                        </MenuButton>
+                        <MenuButton fx:id="sortButton" layoutX="14.0" layoutY="45.0" mnemonicParsing="false" text="Filter" wrapText="true">
+                          <items>
+                            <MenuItem mnemonicParsing="false" text="Sort" />
+                          </items>
+                        </MenuButton>
+                     </children></AnchorPane>
+                  <ListView fx:id="songListView" prefHeight="351.0" prefWidth="267.0" />
+               </children>
+            </VBox>
+         </children>
+      </GridPane>
+   </children>
+</GridPane>
